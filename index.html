@@ -1,12 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tejas Pirware | Mechanical Engineer</title>
-  <link rel="stylesheet" href="loader.css" />
-  <link rel="stylesheet" href="output.css" />
+
+  <!-- Tailwind CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -14,88 +18,70 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="projectExt.css" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="px-5 md:px-16 w-[100vw] cursor-none">
+<body class="bg-white text-gray-800 px-5 md:px-16">
   <!-- Loader -->
-  <div id="my-loader" class="bg-black fixed duration-[1500ms] transition h-full w-full flex justify-center items-center z-50 left-0">
-    <div class="content">
-      <div class="content__container">
-        <p class="content__container__text">Welcome</p>
-        <ul class="content__container__list">
-          <li class="content__container__list__item">Engineer!</li>
-          <li class="content__container__list__item">Innovator!</li>
-          <li class="content__container__list__item">Builder!</li>
-          <li class="content__container__list__item">Problem Solver!</li>
-        </ul>
-      </div>
-    </div>
+  <div class="text-center p-10">
+    <p class="text-xl font-bold">Welcome</p>
+    <ul class="list-disc list-inside mt-4">
+      <li>Engineer!</li>
+      <li>Innovator!</li>
+      <li>Builder!</li>
+      <li>Problem Solver!</li>
+    </ul>
   </div>
 
-  <main class="min-h-[100vh] h-auto overflow-x-hidden relative">
-    <!-- Navbar Start -->
-    <nav id="my-navbar" class="h-24 p-5 flex items-center justify-between">
-      <div class="font-bold text-4xl">Tejas</div>
-      <div id="navbar-list" class="hidden md:flex gap-10 items-center">
-        <a href="./index.html"><h1 class="py-1 hover:-translate-y-1 transition duration-300">HOME</h1></a>
-        <a href="./about.html"><h1 class="py-1 hover:-translate-y-1 transition duration-300">ABOUT</h1></a>
-        <a href="#projects"><h1 class="py-1 hover:-translate-y-1 transition duration-300">PROJECTS</h1></a>
-        <a href="#contact"><button class="py-4 hover:-translate-y-1 bg-black text-white rounded-md px-4 transition duration-300 hover:shadow-xl">CONTACT</button></a>
-      </div>
-      <div id="toggle-mynavbar" class="md:hidden"><i class="fa-solid fa-bars"></i></div>
-    </nav>
-
-    <!-- Project Title -->
-    <div class="w-full text-center h-80 flex flex-col">
-      <h1 id="project-title" class="mt-20 text-[3rem] md:text-[6rem] transition duration-[1500ms]">PROJECTS</h1>
-      <p id="title-para" class="text-[#fda228] text-[1rem] tracking-widest md:tracking-[8px] transition duration-[1500ms]">
-        Engineering solutions with real-world impact
-      </p>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center py-6 border-b">
+    <div class="text-3xl font-bold">Tejas</div>
+    <div class="flex gap-6">
+      <a href="#home" class="text-blue-600 font-bold">HOME</a>
+      <a href="#about" class="text-blue-600 font-bold">ABOUT</a>
+      <a href="#projects" class="text-blue-600 font-bold">PROJECTS</a>
+      <a href="#contact" class="bg-black text-white px-4 py-2 rounded">CONTACT</a>
     </div>
+  </nav>
 
-    <!-- Projects Section -->
-    <div class="w-full flex flex-col pb-20" id="projects">
-      <div class="w-full h-auto md:h-[28rem] flex flex-col md:flex-row">
-        <div class="imges-left h-full w-full md:w-[45%] p-10">
-          <img class="h-full w-full rounded-lg shadow-xl" src="ATV.png" alt="Electric ATV" />
-        </div>
-        <div class="hidden md:block w-[10%] h-full">
-          <div class="h-full w-[50%] border-e-2 border-[#fda228]"></div>
-        </div>
-        <div class="project-content mt-10 md:mt-0 h-full w-full md:w-[45%] flex flex-col text-start md:pt-28 px-10 gap-1">
-          <h1 class="project-title text-4xl tracking-wider">Electric All-Terrain Vehicle</h1>
-          <p class="project-para text-xl tracking-wide">Participated in BAJA SAEINDIA. Designed and fabricated a performance-optimized, sustainable electric ATV chassis. Hands-on with SolidWorks, welding, simulation, and powertrain design.</p>
+  <!-- Projects Section -->
+  <section id="projects" class="py-10" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-4">PROJECTS</h2>
+    <p class="text-center text-orange-500 mb-10">Engineering solutions with real-world impact</p>
+
+    <div class="grid gap-16">
+      <!-- Project 1 -->
+      <div class="grid md:grid-cols-2 items-center gap-8">
+        <img src="ATV.png" alt="Electric ATV" class="rounded shadow" />
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Electric All-Terrain Vehicle</h3>
+          <p>Participated in BAJA SAEINDIA. Designed and fabricated a performance-optimized, sustainable electric ATV chassis. Hands-on with SolidWorks, welding, simulation, and powertrain design.</p>
         </div>
       </div>
 
-      <div class="w-full h-auto md:h-[28rem] flex flex-col-reverse md:flex-row">
-        <div class="project-content h-full w-full md:w-[45%] mt-10 md:mt-0 flex flex-col text-start md:pt-28 px-10 gap-1">
-          <h1 class="project-title text-4xl tracking-wider">Robotic Arm (6 DOF)</h1>
-          <p class="project-para text-xl tracking-wide">Honors project using Arduino-controlled robotic arm for pick-and-place automation. Built custom mechanics, control logic, and tested real-time robotic movement with precision.</p>
+      <!-- Project 2 -->
+      <div class="grid md:grid-cols-2 items-center gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Robotic Arm (6 DOF)</h3>
+          <p>Honors project using Arduino-controlled robotic arm for pick-and-place automation. Built custom mechanics, control logic, and tested real-time robotic movement with precision.</p>
         </div>
-        <div class="hidden md:block w-[10%] h-full">
-          <div class="h-full w-[50%] border-e-2 border-[#fda228]"></div>
-        </div>
-        <div class="imges-right h-full w-full md:w-[45%] p-10">
-          <img class="h-full w-full rounded-lg shadow-xl" src="robotic arm.jpg" alt="Robotic Arm" />
-        </div>
+        <img src="robotic arm.jpg" alt="Robotic Arm" class="rounded shadow" />
       </div>
 
-      <div class="w-full h-auto md:h-[28rem] flex flex-col md:flex-row">
-        <div class="imges-left h-full w-full md:w-[45%] p-10">
-          <img class="h-full w-full rounded-lg shadow-xl" src="LCA image.jpg" alt="LCA" />
-        </div>
-        <div class="hidden md:block w-[10%] h-full">
-          <div class="h-full w-[50%] border-e-2 border-[#fda228]"></div>
-        </div>
-        <div class="project-content h-full w-full md:w-[45%] mt-10 md:mt-0 flex flex-col text-start md:pt-28 px-10 gap-1">
-          <h1 class="project-title text-4xl tracking-wider">Life Cycle Assessment</h1>
-          <p class="project-para text-xl tracking-wide">Used Monte Carlo Simulation to analyze environmental impact of aluminum, PET, and TetraPak packaging. Focused on recyclability, emissions, and lifecycle energy mapping.</p>
+      <!-- Project 3 -->
+      <div class="grid md:grid-cols-2 items-center gap-8">
+        <img src="LCA image.jpg" alt="Life Cycle Assessment" class="rounded shadow" />
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Life Cycle Assessment</h3>
+          <p>Used Monte Carlo Simulation to analyze environmental impact of aluminum, PET, and TetraPak packaging. Focused on recyclability, emissions, and lifecycle energy mapping.</p>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
-  <script src="project.js"></script>
+  <!-- AOS Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
